@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">EASY·到梦</string>
+    <string name="app_info">
+        更新内容:\n
+            ·详情页面增加活动地点、经纬度\n
+            ·详情页面“复制AID”按钮改为“导航”\n
+            ·“反馈”和“退出”按钮移动到了侧栏\n\n
+        下一个版本功能：\n
+            ·批量发送报名数据包\n\n
+
+        测试软件，内部使用，请勿外传！</string>
+    <string name="app_version">2.8</string>
+</resources>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/tb_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+                app:layout_scrollFlags="scroll|enterAlways|snap"/>
+            <LinearLayout
+                android:id="@+id/ll_aid_and_alarm_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
+                android:visibility="gone">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginTop="0dp">
+                    <EditText
+                        android:id="@+id/et_aid"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:hint="输入活动的aid"
+                        android:gravity="center"
+                        android:imeOptions="actionNext"/>
+                    <Button
+                        android:id="@+id/bt_aid_join"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:text="立即报名" />
+                </LinearLayout>
+
+                <!--闹钟的测试输入-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp">
+                    <EditText
+                        android:id="@+id/et_hour"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:hint="时"
+                        android:gravity="center"
+                        android:imeOptions="actionNext" />
+                    <TextView
+                        android:layout_width="3dp"
+                        android:layout_height="wrap_content"
+                        android:text=":"/>
+                    <EditText
+                        android:id="@+id/et_minute"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:hint="分"
+                        android:gravity="center"
+                        android:imeOptions="actionNext" />
+                    <TextView
+                        android:layout_width="3dp"
+                        android:layout_height="wrap_content"
+                        android:text=":"/>
+                    <EditText
+                        android:id="@+id/et_second"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:hint="秒"
+                        android:gravity="center"
+                        android:imeOptions="actionNext" />
+                    <Button
+                        android:id="@+id/bt_alarm"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:text="设置定时"/>
+                </LinearLayout>
+                <!--闹钟输入-->
+            </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16sp"
+            android:src="@drawable/task_management"/>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="?attr/actionBarSize">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycle_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"/>
+            </LinearLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/nav_menu"
+        app:headerLayout="@layout/nav_header"/>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
