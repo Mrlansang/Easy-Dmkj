@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
  * @Date 20.9.9 10:59
  **/
 public class DesUtil {
-    private final static String key ="51434574";
+    private final static String key ="加密的Des Key";
     /**
      * 进行MD5加密
      *

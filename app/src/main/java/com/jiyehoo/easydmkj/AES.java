@@ -51,7 +51,7 @@ public class AES {
     boolean isInited = false;
 
    // byte[] iv = { 0x30, 0x31, 0x30, 0x32, 0x30, 0x33, 0x30, 0x34, 0x30, 0x35, 0x30, 0x36, 0x30, 0x37, 0x30, 0x38 };
-    byte[] iv = "9618913120112010".getBytes();
+    byte[] iv = "加密矢量".getBytes();
     public void init(byte[] keyBytes) {
 
         // 如果密钥不足16位，那么就补足.  这个if 中的内容很重要
@@ -150,7 +150,7 @@ public class AES {
     public static void main(String[] args) {
         AES aes=new AES();
 //   加解密 密钥
-        byte[] keybytes = "4T1JbdlgSM6h1urT".getBytes();
+        byte[] keybytes = "加密的key".getBytes();
         String content = "{\"catalogId\":\"\",\"catalogId2\":\"\",\"endTime\":\"\",\"joinEndTime\":\"\",\"joinFlag\":\"\",\"joinStartTime\":\"\",\"keyword\":\"\",\"level\":\"\",\"page\":\"1\",\"signToken\":\"39a9cae0eb8833a61e87c393f68a6b17\",\"sort\":\"\",\"specialFlag\":\"\",\"startTime\":\"\",\"status\":\"\",\"token\":\"7129F15F304C25967CAF5A894F4444AE\",\"uid\":35069158,\"version\":\"4.2.6\"}";
         // 加密字符串
      //   System.out.println("加密前的：" + content);
